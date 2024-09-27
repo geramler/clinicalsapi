@@ -2,6 +2,8 @@ package com.example.patientclinicals.clinicalsapi.clinicalsapi.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -21,6 +23,7 @@ public class Patient {
     private int age;
 
     @OneToMany(mappedBy="patient", cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
+    @JsonManagedReference
     private List<ClinicalData> clinicalData; 
 
     // Getters and Setters

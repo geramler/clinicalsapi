@@ -37,9 +37,9 @@ public class PatientController {
     @PutMapping("/{id}")
     public Patient updatePatient(@PathVariable Long id, @RequestBody Patient patientDetails) {
         return patientRepository.findById(id).map(patient -> {
-            // patient.setName(patientDetails.getName());
+            patient.setFirstName(patientDetails.getFirstName());
+            patient.setLastName(patientDetails.getLastName());
             patient.setAge(patientDetails.getAge());
-            // patient.setAddress(patientDetails.getAddress());
             // Update other fields as necessary
             return patientRepository.save(patient);
         }).orElseGet(() -> {
