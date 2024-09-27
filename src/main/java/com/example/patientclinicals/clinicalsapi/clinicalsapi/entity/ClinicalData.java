@@ -25,7 +25,8 @@ public class ClinicalData {
     private Timestamp measuredDateTime;
     @ManyToOne(fetch = FetchType.LAZY) 
     @JoinColumn(name = "patient_id", nullable = false) 
-    // we don’t want this to get into a loop, when the JSON is generated        // when the API is called 
+    // we don’t want this to get into a loop, when the JSON is generated        
+    // when the API is called 
     @JsonIgnore 
     private Patient patient; 
 
