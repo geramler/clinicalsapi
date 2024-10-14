@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "6e49dff1-50a5-4fd0-be35-5890117566f6",
+		"name": "ClincalsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3074325",
+		"_collection_link": "https://martian-water-81591.postman.co/workspace/Work~f67b655d-0b72-447f-943f-bc4b2db9d35f/collection/3074325-6e49dff1-50a5-4fd0-be35-5890117566f6?action=share&source=collection_link&creator=3074325"
+	},
+	"item": [
+		{
+			"name": "get all patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/patients"
+			},
+			"response": []
+		},
+		{
+			"name": "get patient by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/patients/1"
+			},
+			"response": []
+		},
+		{
+			"name": "add patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"James\",\n    \"lastName\": \"Miller\",\n    \"age\": 28\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/patientservices/api/patients"
+			},
+			"response": []
+		},
+		{
+			"name": "delete patient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/patients/2"
+			},
+			"response": []
+		},
+		{
+			"name": "get all clinicaldata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/clinicaldata"
+			},
+			"response": []
+		},
+		{
+			"name": "get clinicaldata by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/clinicaldata/2"
+			},
+			"response": []
+		},
+		{
+			"name": "add clinical data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patientId\": 1,\r\n    \"componentName\": \"Heart Rate\",\r\n    \"componentValue\": \"78\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/patientservices/api/clinicaldata/clinicals"
+			},
+			"response": []
+		},
+		{
+			"name": "update clinical data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"componentName\": \"Blood Pressure\",\n    \"componentValue\": \"125/85\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/patientservices/api/clinicaldata/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete clinical data",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/patientservices/api/clinicaldata/1"
+			},
+			"response": []
+		}
+	]
+}
